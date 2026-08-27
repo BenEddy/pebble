@@ -781,6 +781,7 @@ type InternalKeyBounds struct {
 	largestTrailer      InternalKeyTrailer
 }
 
+// SetInternalKeyBounds copies input keys rather than retaining aliases.
 func (ikr *InternalKeyBounds) SetInternalKeyBounds(smallest, largest InternalKey) {
 	ikr.userKeyData = string(smallest.UserKey) + string(largest.UserKey)
 	ikr.smallestTrailer = smallest.Trailer
